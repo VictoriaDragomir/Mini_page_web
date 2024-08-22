@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Comande</title>
+    <link href="styles/comande.css" rel="stylesheet" type="text/css">
+    <script src="js/formcalculations.js"></script>
+</head>
+<body onload='hideTotal()' style="background: url('images/bkg7.jpg')">
+    <div id="wrap">
+        <form id="comande" onsubmit="return false;">
+            <div class="cont_order">
+                <fieldset>
+                    <legend>Choisir!</legend>
+                    <label>Taille</label>
+                    <label class="radiolabel">
+                        <input type="radio" name="selectedpizza" value="Petite" onclick="calculateTotal()"> Petite : 26cm de diamètre pour 1/2 personnes(3)
+                    </label><br>
+                    <label class="radiolabel">
+                        <input type="radio" name="selectedpizza" value="Moyenne" onclick="calculateTotal()"> Moyenne : 33cm de diamètre pour 2/3 personnes(6)
+                    </label><br>
+                    <label class="radiolabel">
+                        <input type="radio" name="selectedpizza" value="Géante" onclick="calculateTotal()"> Géante : 40cm de diamètre pentru 3/4 persoane(9)
+                    </label><br>
+                    <label>Pizza</label>
+                    <select id="filling" name="filling" onchange="calculateTotal()">
+                        <option value="None">Choisissez votre pizza</option>
+                        <option value="Pizza aux legumes d'ete">Pizza d'été(12)</option>
+                        <option value="Pizza aux legumes d'hiver">Pizza d'hiver(12)</option>
+                        <option value="Pizza Reine">Pizza Reine(15)</option>
+                        <option value="Pizza Pepperoni">Pizza Pepperoni(14)</option>
+                        <option value="Calzone Paysanne">Calzone Paysanne(12)</option>
+                        <option value="Calzone">Calzone(11)</option>
+                        <option value="Pizza au chocolat et bonbons">Pizza au chocolat et bonbons (11)</option>
+                        <option value="Pizza nutella banane">Pizza nutella banane(11)</option>
+                        <option value="Pizza cake salami">Pizza cake salami(17)</option>
+                        <option value="Pizza cake pepperoni">Pizza cake pepperoni(18)</option>
+                    </select>
+                    <br>
+                    <p>
+                        <label for="includefromage" class="inlinelabel">Fromage supplémentaire(3)</label>
+                        <input type="checkbox" id="includefromage" name="includefromage" onclick="calculateTotal()">
+                    </p>
+                    <div id="totalPrice"></div>
+                </fieldset>
+            </div>
+
+            <div class="cont_details">
+                <fieldset>
+                    <legend>Détails du contact</legend>
+                    <label for="sexe_homme">Sexe</label><br>
+                    <input type="radio" id="sexe_homme" name="sexe" value="homme">
+                    <label for="sexe_homme">Homme</label><br>
+                    <input type="radio" id="sexe_femme" name="sexe" value="femme">
+                    <label for="sexe_femme">Femme</label><br>
+                    <label for="name">Nom</label>
+                    <input type="text" id="name" name="name"><br>
+                    <label for="address">Adresse</label>
+                    <input type="text" id="address" name="address"><br>
+                    <label for="phonenumber">Numéro de téléphone</label>
+                    <input type="text" id="phonenumber" name="phonenumber"><br>
+                    <label for="cgv">Conditions Générales de Vente</label>
+                    <input type="checkbox" id="cgv" name="cgv">
+                    <label for="cgv">J'accepte les <a href="https://fr.wikipedia.org/wiki/Conditions_g%C3%A9n%C3%A9rales_de_vente">CGV</a></label><br>
+                </fieldset>
+            </div>
+            <input type="submit" id="submit" value="Envoyer" onclick="calculateTotal()">
+        </form>
+    </div>
+</body>
+</html>
